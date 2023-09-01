@@ -14,6 +14,8 @@ ENV PATH="/home/gitpod/solana-release/bin:${PATH}"
 WORKDIR /workspace/solana-curriculum
 RUN npm install -g yarn @coral-xyz/anchor-cli@0.28.0
 
-COPY . .
+COPY --chown=camper:camper . .
+
+USER camper
 
 RUN npm install
